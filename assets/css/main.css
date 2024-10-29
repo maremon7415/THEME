@@ -1,0 +1,157 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /* Colors */
+  --primary-color: #13bfb3;
+  --secondary-color: #a4c400;
+  --background-color: #f1f1f1;
+  --text-color: #333333;
+
+  /* Fonts */
+  --primary-font: "Kanit", sans-serif;
+  --text-font: "IBM Plex Sans", sans-serif;
+  --heading-font: "Open Sans", sans-serif;
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-regular: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Font Sizes (increased by 2px) */
+  --font-size-small: 1rem;
+  --font-size-regular: 1.125rem;
+  --font-size-medium: 1.375rem;
+  --font-size-large: 1.625rem;
+  --font-size-xlarge: 2.125rem;
+  --font-size-xxlarge: 3.125rem;
+}
+
+/* Color Classes */
+.primaryColor {
+  color: var(--primary-color);
+}
+
+.secondaryColor {
+  color: var(--secondary-color);
+}
+
+.textColor {
+  color: var(--text-color);
+}
+
+/* Font Classes */
+.primaryFont {
+  font-family: var(--primary-font);
+}
+
+.primarNormal {
+  font-family: var(--primary-font);
+  font-weight: var(--font-weight-normal);
+}
+
+.primaryReg {
+  font-family: var(--primary-font);
+  font-weight: var(--font-weight-regular);
+}
+
+.primarySB {
+  font-family: var(--primary-font);
+  font-weight: var(--font-weight-semibold);
+}
+
+.primaryBold {
+  font-family: var(--primary-font);
+  font-weight: var(--font-weight-bold);
+}
+
+.textFont {
+  font-family: var(--text-font);
+}
+
+.headingFont {
+  font-family: var(--heading-font);
+}
+
+/*=============== BASE ===============*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body {
+  font-family: var(--primary-font);
+  font-size: var(--font-size-regular);
+  background-color: var(--body-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ================ heroCss================= */
+.hero {
+  height: calc(100vh - 80px);
+  width: 100%;
+  margin-top: 80px;
+}
+
+.swiper-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* Animation Styles */
+.mini-header,
+.big-header,
+.slider-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation-fill-mode: forwards;
+}
+
+.swiper-slide-active .mini-header {
+  animation: slideIn 1s forwards;
+}
+
+.swiper-slide-active .big-header {
+  animation: slideIn 1s forwards 0.5s;
+}
+
+.swiper-slide-active .slider-text {
+  animation: slideIn 1s forwards 1s;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation for disappearing text */
+.swiper-slide {
+  transition: opacity 0.8s ease-in-out;
+}
+
+.swiper-slide:not(.swiper-slide-active) .mini-header,
+.swiper-slide:not(.swiper-slide-active) .big-header,
+.swiper-slide:not(.swiper-slide-active) .slider-text {
+  animation: slideOut 0.8s forwards;
+}
+
+@keyframes slideOut {
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
