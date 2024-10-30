@@ -1,7 +1,7 @@
 //scrptForNavBar------------------------------
 // Fetch the header HTML and insert it into the document
 (() => {
-  fetch("components/header.html")
+  fetch("/THEME/assets/components/header.html")
     .then((response) => (response.ok ? response.text() : null))
     .then((data) => {
       if (data) {
