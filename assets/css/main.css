@@ -80,14 +80,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
+
 
 body {
   font-family: var(--primary-font);
   font-size: var(--font-size-regular);
-  background-color: var(--body-color);
+  background-color: var(--background-color);
+  overflow-x: hidden;
 }
 
 ul {
@@ -100,10 +100,13 @@ a {
 
 /* ================ heroCss================= */
 .hero {
-  height: calc(100vh - 80px);
+  height: calc(80vh - 80px);
   width: 100%;
   margin-top: 80px;
+  background: #000;
 }
+
+
 
 .swiper-container {
   height: 100%;

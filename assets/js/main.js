@@ -1,7 +1,30 @@
 //scrptForNavBar------------------------------
 // Fetch the header HTML and insert it into the document
+// (() => {
+//   fetch("/THEME/assets/components/header.html")
+//     .then((response) => (response.ok ? response.text() : null))
+//     .then((data) => {
+//       if (data) {
+//         document.body.insertAdjacentHTML("afterbegin", data);
+
+//         // Initialize responsive navigation function once the navigation menu is successfully loaded
+//         setupResponsiveNav();
+
+//         // Initialize search modal functionality once the navigation menu is successfully loaded
+//         setupSearchModal();
+//       }
+//     });
+// })();
 (() => {
-  fetch("/THEME/assets/components/header.html")
+  // Check if we're on GitHub Pages
+  const isGitHubPages = window.location.hostname.endsWith("github.io");
+
+  // Use the appropriate path based on the environment
+  const path = isGitHubPages
+    ? "/THEME/assets/components/header.html" // Absolute path for GitHub Pages
+    : "../assets/components/header.html"; // Relative path for local testing
+
+  fetch(path)
     .then((response) => (response.ok ? response.text() : null))
     .then((data) => {
       if (data) {
